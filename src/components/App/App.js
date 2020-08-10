@@ -10,7 +10,7 @@ const [isloading,setIsLoading]=useState(true);
 
  useEffect(()=>{
  
-apiURL = `https://backendpandoragui.herokuapp.com/`;
+const apiURL = `https://backendpandoragui.herokuapp.com/`;
         fetch(apiURL)
        .then(resp=>resp.json())
        .then(response=>{

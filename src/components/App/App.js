@@ -1,16 +1,16 @@
-/////APP.JS
+//////////APP.JS
 import React,{useEffect,useState}  from 'react';
 import  './App.css'; 
 
 const App = (props) => {
 const [users,setUsers]=useState([]);
 const [isloading,setIsLoading]=useState(true);  
-
+const apiURL = `https://backendpandoragui.herokuapp.com/`;
 
 
  useEffect(()=>{
  
-const apiURL = `https://backendpandoragui.herokuapp.com/`;
+
         fetch(apiURL)
        .then(resp=>resp.json())
        .then(response=>{

@@ -45,7 +45,7 @@ const apiURL = `https://backendpandoragui.herokuapp.com`;
     <h1>Informacion de la Api con stringify</h1>
    	<ul>
    	{
-   		users.map((user,index)=><li key={index}> test </li>)
+   		users.map((user,index)=><li key={index}></li>)
  	
    	}
    	</ul>

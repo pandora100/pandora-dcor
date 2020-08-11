@@ -42,7 +42,7 @@ const apiURL = `https://backendpandoragui.herokuapp.com/users`;
 
    return (
     <div>
-    <h1>Informacion de la Api con stringify</h1>
+    <h1>Informacion de la Api en React remota</h1>
    	<ul>
    	{
    		users.map((user,index)=><li key={index}> {user.id} - {user.name} - {user.email} </li>)

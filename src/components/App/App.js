@@ -5,7 +5,7 @@ import  './App.css';
 const App = (props) => {
 const [users,setUsers]=useState([]);
 const [isloading,setIsLoading]=useState(true);  
-const apiURL = `https://backendpandoragui.herokuapp.com`;
+const apiURL = `https://backendpandoragui.herokuapp.com/users`;
 
 
  useEffect(()=>{
@@ -45,7 +45,7 @@ const apiURL = `https://backendpandoragui.herokuapp.com`;
     <h1>Informacion de la Api con stringify</h1>
    	<ul>
    	{
-   		users.map((user,index)=><li key={index}></li>)
+   		users.map((user,index)=><li key={index}>{user.name}</li>)
  	
    	}
    	</ul>

@@ -9,6 +9,18 @@ module.exports = {
   },
   module: {
     rules: [
+       {
+       test: /\.(jpe?g|png|PNG|gif|svg)$/i,
+        use: {
+          loader: "file-loader",
+            options: {
+              query: {
+                name:'assets/[name].[ext]'
+              }
+            }
+            }
+          },
+
       {
         test: /\.js$/,
         exclude: /node_modules/,

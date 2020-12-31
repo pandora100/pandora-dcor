@@ -13,24 +13,8 @@ import moment from "moment";
 
 
 function Bitacora({setAuth}) {
-  	
  const [name, setName] = useState("");
  const [dateTime, setDateTime] = useState(new Date());
- const [data, setData] = useState([]);
- ////////77
- const [gifs, setGifs] = useState([]);
- const [startDate, setStartDate] = useState(new Date());
- const [endDate, setEndDate] = useState(new Date());
- const [filtro1, setFiltro1] = useState("grupo");
- const [filtro2, setFiltro2] = useState("agente");
- const [filtro3, setFiltro3] = useState("modulo");
- const [valorfiltro1, setValorFiltro1] = useState('');
- const [valorfiltro2, setValorFiltro2] = useState('');
- const [valorfiltro3, setValorFiltro3] = useState('');
- ////////77
-
- ////////77
-
  console.log('Bitacora 16' );
  console.log('Bitacora 19.05 name:',name);  
  const getProfile = async () => {
@@ -79,7 +63,17 @@ function Bitacora({setAuth}) {
   }, []);
 //  
  
-
+////////77
+ const [gifs, setGifs] = useState([]);
+ const [startDate, setStartDate] = useState(new Date());
+ const [endDate, setEndDate] = useState(new Date());
+ const [filtro1, setFiltro1] = useState("grupo");
+ const [filtro2, setFiltro2] = useState("agente");
+ const [filtro3, setFiltro3] = useState("modulo");
+ const [valorfiltro1, setValorFiltro1] = useState('');
+ const [valorfiltro2, setValorFiltro2] = useState('');
+ const [valorfiltro3, setValorFiltro3] = useState('');
+ ////////77
 
   const handleSubmit = async evt => {
    
@@ -114,7 +108,7 @@ function Bitacora({setAuth}) {
       ////////////////////////////////////onClose();
      setGifs(parseRes);
      
-     
+      console.log('Bitacora 207 gifs:',gifs); 
     } catch (err) {
       console.error(err.message);
      //////////////////////////////////// 
@@ -168,9 +162,7 @@ const columns = [
         ];
 
       //var data = gifs;
-     //let datax = [...selectAlarm]; 
-     //let data = {[]};
-     //let data = [...gifs];
+      var data = [];
      const options = {
      
      tooltips:true,
@@ -183,7 +175,7 @@ const columns = [
      paginationSize:100 // this option can take any positive integer value (default = 10)
 };
 
- console.log('Bitacora 207 gifs:',gifs); 
+console.log('Bitacora 21' ); 
  //////////
   return (
     
@@ -308,14 +300,12 @@ const columns = [
                             <div className="count11container" >Total de registros encontrados: 
                             </div > 
                             <div className="miTabla11container" >
-                             <ReactTabulator
-                            data={gifs}
-                            columns={columns}
-                            tooltips={true}
-                            layout={"fitData"}
-                            options={options}
-                           
-                            />
+                            {gifs.map((fila,index)=>{
+                            	return <div >
+                            	<div key={fila.id_evento}>{fila.nombremo}</div>
+                            	 </div >
+                            })}
+                            
                            
                             />
                            

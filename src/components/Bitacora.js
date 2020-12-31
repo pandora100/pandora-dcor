@@ -297,17 +297,22 @@ console.log('Bitacora 21' );
 
           </div>
                             
-                            <div className="count11container" >Total de registros encontrados: 
+                            <div className="count11container" > Total de registros encontrados: 
                             </div > 
-                            <div className="miTabla11container" >
-                            {gifs.map((fila,index)=>{
-                            	return <div >
-                            	<div key={fila.id_evento}>{fila.nombremo}</div>
-                            	 </div >
-                            })}
-                            
+                           <div>
+                {gifs.length > 0 ?
+                 <ReactTabulator
+                            data={gifs}
+                            columns={columns}
+                            tooltips={true}
+                            layout={"fitData"}
+                            options={options}
                            
-                            />
+                            />  
+                : <p className="plusOrMinus" >Cargando</p>
+                }
+               
+                          
                            
 		                    </div > 
      

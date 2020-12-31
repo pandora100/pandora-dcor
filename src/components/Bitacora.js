@@ -78,7 +78,7 @@ function Bitacora({setAuth}) {
       const body = { startDate,endDate,filtro1,filtro2,filtro3,valorfiltro1,valorfiltro2,valorfiltro3};
       console.log('Bitacora 10 body:',body);
       
-      const response = await fetch("http://localhost:5000/dashboard/bitacoras", {
+      const response = await fetch("http://backendpandoragui.herokuapp.com/dashboard/bitacoras", {
         method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -291,14 +291,17 @@ console.log('Bitacora 207 gifs:',gifs.length);
                             </div > 
                             <div className="miTabla11container" >
                             
+                           
+                         
+                            {gifs.length > 0 ?
                             <ReactTabulator
-                            data={gifs}
+                            data={datax}
                             columns={columns}
                             tooltips={true}
                             layout={"fitData"}
                             options={options}
                            
-                            />
+                            />  
                             
                             </div > 
      

@@ -133,11 +133,7 @@ setValorFiltro3(e.target.value);
 
            const columns = [
           { title: "id", field: "id_evento", width: 60 },
-            { title: "grupo", field: "nombregr", width: 100},
-           
-            
-       
-          
+          { title: "grupo", field: "nombregr", width: 100}
             
         ];
 

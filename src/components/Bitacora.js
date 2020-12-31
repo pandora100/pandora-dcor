@@ -16,6 +16,17 @@ function Bitacora({setAuth}) {
  const referencia = useRef(); 	
  const [name, setName] = useState("");
  const [dateTime, setDateTime] = useState(new Date());
+ ////////77
+ const [gifs, setGifs] = useState([]);
+ const [startDate, setStartDate] = useState(new Date());
+ const [endDate, setEndDate] = useState(new Date());
+ const [filtro1, setFiltro1] = useState("grupo");
+ const [filtro2, setFiltro2] = useState("agente");
+ const [filtro3, setFiltro3] = useState("modulo");
+ const [valorfiltro1, setValorFiltro1] = useState('');
+ const [valorfiltro2, setValorFiltro2] = useState('');
+ const [valorfiltro3, setValorFiltro3] = useState('');
+ ////////77
  console.log('Bitacora 16' );
  console.log('Bitacora 19.05 name:',name);  
  const getProfile = async () => {
@@ -64,17 +75,7 @@ function Bitacora({setAuth}) {
   }, []);
 //  
  
-////////77
- const [gifs, setGifs] = useState([]);
- const [startDate, setStartDate] = useState(new Date());
- const [endDate, setEndDate] = useState(new Date());
- const [filtro1, setFiltro1] = useState("grupo");
- const [filtro2, setFiltro2] = useState("agente");
- const [filtro3, setFiltro3] = useState("modulo");
- const [valorfiltro1, setValorFiltro1] = useState('');
- const [valorfiltro2, setValorFiltro2] = useState('');
- const [valorfiltro3, setValorFiltro3] = useState('');
- ////////77
+
 
   const handleSubmit = async evt => {
    
@@ -164,7 +165,7 @@ const columns = [
 
       //var data = gifs;
      //let datax = [...selectAlarm]; 
-      var data = gifs;
+     let data = gifs;
      //let data = [...gifs];
      const options = {
      

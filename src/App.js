@@ -26,15 +26,11 @@ toast.configure();
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
- console.log('App 0.1 ModalContext:',ModalContext);
- console.log('App 0.6 ModalContext.Provider:',ModalContext.Provider);
- console.log('App 1 ModalProvider:',ModalProvider);
- console.log('App 00.1 RemoteContext:',RemoteContext);
- console.log('App 00.6 RemoteContext.Provider:',RemoteContext.Provider);
- console.log('App 01 RemoteProvider:',RemoteProvider);
+ console.log('App 10' );
+ 
   const checkAuthenticated = async () => {
     try {
-      
+    console.log('App 11' );  
         const res = await fetch("http://backendpandoragui.herokuapp.com/authentication/verify", {
 
        //  const res = await fetch("http://localhost:5000/authentication/verify", {
@@ -43,20 +39,22 @@ function App() {
       });
 
       const parseRes = await res.json();
-
+       console.log('App 15 parseRes',parseRes );
       parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
     } catch (err) {
-      console.error(err.message);
+      console.error('App 12',err.message);
     }
   };
 
   
    const setAuth = boolean => {
     setIsAuthenticated(boolean);
+    console.log('App 13' );
   };
 
    useEffect(() => {
     checkAuthenticated();
+    console.log('App 14' );
   }, []);
 
 ////////77

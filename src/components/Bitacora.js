@@ -15,6 +15,7 @@ import moment from "moment";
 function Bitacora({setAuth}) {
  const [name, setName] = useState("");
  const [dateTime, setDateTime] = useState(new Date());
+ console.log('Bitacora 16' ); 
  const getProfile = async () => {
     try {
       const res = await fetch("http://backendpandoragui.herokuapp.com/dashboard/", {
@@ -22,7 +23,7 @@ function Bitacora({setAuth}) {
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
-
+ console.log('Bitacora 17' ); 
       const parseData = await res.json();
       setName(parseData.user_name);
       console.log('Dashboard 1 parseRes:',parseData); 
@@ -33,6 +34,7 @@ function Bitacora({setAuth}) {
        // console.log('Dashboard 6 isModalOpen:',isModalOpen);       
     } catch (err) {
       console.error(err.message);
+      console.log('Bitacora 18' ); 
        toast.error(err.message);
     }
   };
@@ -50,6 +52,7 @@ function Bitacora({setAuth}) {
 
   useEffect(() => {
     getProfile();
+    console.log('Bitacora 19' ); 
   }, []);
 //  
  
@@ -66,7 +69,7 @@ function Bitacora({setAuth}) {
  ////////77
 
   const handleSubmit = async evt => {
-  
+    console.log('Bitacora 20' ); 
     evt.preventDefault();
     // console.log('InputDependencia 08 handleSubmit evt:',evt);
     //////
@@ -164,7 +167,7 @@ const columns = [
      paginationSize:100 // this option can take any positive integer value (default = 10)
 };
 
-
+console.log('Bitacora 21' ); 
  //////////
   return (
     

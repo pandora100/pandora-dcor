@@ -67,8 +67,7 @@ function App() {
     <React.Fragment>
 
      <Router>
-     <ModalProvider>
-     <RemoteProvider>
+     
     <Header/>
     
         <div className="container" >
@@ -102,8 +101,7 @@ function App() {
           </Switch>
           
         </div>
-        </RemoteProvider> 
-        </ModalProvider>
+      
       </Router>
      
     </React.Fragment>

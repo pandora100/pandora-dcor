@@ -108,7 +108,7 @@ function Bitacora({setAuth}) {
       ////////////////////////////////////onClose();
      setGifs(parseRes);
      
-      console.log('Bitacora 207 gifs:',gifs); 
+     
     } catch (err) {
       console.error(err.message);
      //////////////////////////////////// 
@@ -176,6 +176,8 @@ const columns = [
 };
 
 console.log('Bitacora 21' ); 
+console.log('Bitacora 207 gifs:',gifs);
+console.log('Bitacora 207 gifs:',gifs.length);  
  //////////
   return (
     

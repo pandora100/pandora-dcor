@@ -300,8 +300,9 @@ console.log('Bitacora 207 gifs:',gifs.length);
                             tooltips={true}
                             layout={"fitData"}
                             options={options}
-                            : 
-                            /> <p >  Cargando  </p> 
+                            
+                            /> 
+                            : <p>Cargando</p> 
                             }
                             </div > 
      

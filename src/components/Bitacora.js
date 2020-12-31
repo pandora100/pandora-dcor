@@ -148,8 +148,19 @@ setValorFiltro3(e.target.value);
 }
  //////////
 const columns = [
-            { title: "id", field: "id_evento", width: 60 },
-                           
+            { title: "id", field: "id_evento", width: 60 , cssClass:"miTabla11"},
+            { title: "grupo", field: "nombregr", width: 100, cssClass:"miTabla11"},
+            { title: "agente", field: "nombreag", width: 200 , cssClass:"miTabla11"},
+          
+            { title: "evento", field: "nombremo", width: 200, cssClass:"miTabla11" },
+            { title: "estado", field: "criticity",width: 100,cellHozAlign: "center", formatter: "star" , cssClass:"miTabla11"},
+            { title: "timestamp", field: "timestamp",width: 300,cellHozAlign: "leftr",  formatter:function(cell, formatterParams, onRendered){
+                        var value = cell.getValue();
+                        value = moment(value).format("DD/MM/YYYY HH:mm:ss");
+                        return value;
+                    }, cssClass:"miTabla11"}, 
+            {title: "usercomment", field: "user_comment", width: 150 , cssClass:"miTabla11" }, 
+            {title: "utimestamp", field: "utimestamp", width: 100, cssClass:"miTabla11"  },               
            
           
             
@@ -299,7 +310,7 @@ console.log('Bitacora 207 gifs:',gifs.length);
                          
                 {gifs.length > 0 ?
                  <ReactTabulator
-                            data={tabledata}
+                            data={...tabledata}
                             columns={columns}
                             tooltips={true}
                             layout={"fitData"}

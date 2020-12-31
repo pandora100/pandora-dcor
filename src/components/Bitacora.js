@@ -301,7 +301,7 @@ console.log('Bitacora 21' );
                             </div > 
                            <div>
                  GIFS: {gifs}         
-                {gifs.length >= 0 ?
+                {gifs.length > 0 ?
                  <ReactTabulator
                             data={gifs}
                             columns={columns}
@@ -310,7 +310,7 @@ console.log('Bitacora 21' );
                             options={options}
                            
                             />  
-                : <p className="plusOrMinus" >Cargando</p>
+                : <p className="count11container" >Cargando</p>
                 }
                
                           

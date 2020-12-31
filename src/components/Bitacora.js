@@ -130,7 +130,7 @@ valorfiltro3[e.target.value];
 setValorFiltro3(e.target.value);
 }
  //////////
-const columns = [
+
            const columns = [
           { title: "id", field: "id_evento", width: 60 },
             { title: "grupo", field: "nombregr", width: 100},

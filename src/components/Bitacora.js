@@ -162,7 +162,9 @@ const columns = [
         ];
 
       //var data = gifs;
-      var data = gifs;
+     //let datax = [...selectAlarm]; 
+     // var data = gifs;
+     let data = [...gifs];
      const options = {
      
      tooltips:true,

@@ -301,7 +301,7 @@ console.log('Bitacora 21' );
                             </div > 
                             <div className="miTabla11container" >
                             {gifs.map((fila,index)=>{
-                            	 <div >
+                            	return <div >
                             	<div key={fila.id_evento}>{fila.nombremo}</div>
                             	 </div >
                             })}

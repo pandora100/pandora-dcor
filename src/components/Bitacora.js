@@ -308,7 +308,7 @@ console.log('Bitacora 207 gifs:',gifs.length);
                             </div > 
                            <div>
                          
-                {gifs.length >= 0 ?
+                {gifs.length > 0 ?
                  <ReactTabulator
                             data={tabledata}
                             columns={columns}

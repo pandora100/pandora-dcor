@@ -107,7 +107,7 @@ function Bitacora({setAuth}) {
      //window.location = "/dashboard";
       ////////////////////////////////////onClose();
      setGifs(parseRes);
-     const parseRes2 = await response.json();
+     
       console.log('Bitacora 207 gifs:',gifs); 
     } catch (err) {
       console.error(err.message);
@@ -302,7 +302,7 @@ console.log('Bitacora 21' );
                             <div className="miTabla11container" >
                             {gifs.map((fila,index)=>{
                             	 <div >
-                            	<h1 key={index}>{fila}</h1>
+                            	<div key={fila.id_evento}>{fila.nombremo}</div>
                             	 </div >
                             })}
                             

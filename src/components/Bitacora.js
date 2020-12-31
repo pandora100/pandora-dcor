@@ -100,14 +100,14 @@ function Bitacora({setAuth}) {
       });
     
      const parseRes = await response.json();
-     
+     console.log('Bitacora 206 parseRes:',parseRes); 
      toast.success("Peticion realizada Exitosamente");
      ////////////////////////////////////toast.success("Peticion Exitosa:");
     
      //window.location = "/dashboard";
       ////////////////////////////////////onClose();
      setGifs(parseRes);
-     
+      console.log('Bitacora 206 gifs:',gifs); 
     } catch (err) {
       console.error(err.message);
      //////////////////////////////////// 
@@ -301,7 +301,7 @@ console.log('Bitacora 21' );
                             <div className="miTabla11container" >
                             {gifs.map((fila,index)=>{
                             	 <div >
-                            	<h1 key={index}>fila</h1>
+                            	<h1 key={index}>{fila}</h1>
                             	 </div >
                             })}
                             

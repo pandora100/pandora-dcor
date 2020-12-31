@@ -156,7 +156,7 @@ const columns = [
         ];
 
       //var data = gifs;
-     // var data = [];
+      var data = [];
      const options = {
      
      tooltips:true,
@@ -296,7 +296,7 @@ console.log('Bitacora 21' );
                             <div className="miTabla11container" >
                             
                             <ReactTabulator
-                            data={gifs}
+                            data={[]}
                             columns={columns}
                             tooltips={true}
                             layout={"fitData"}

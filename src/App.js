@@ -11,7 +11,7 @@ import {
 import { toast } from "react-toastify";
 import Login from "./components/Login";
 import Register from "./components/Register";
-//import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/Dashboard";
 import Bitacora from "./components/Bitacora.js";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -26,11 +26,11 @@ toast.configure();
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
- //console.log('App 0.1 ModalContext:',ModalContext);
- //console.log('App 0.6 ModalContext.Provider:',ModalContext.Provider);
- //console.log('App 1 ModalProvider:',ModalProvider);
- //console.log('App 00.1 RemoteContext:',RemoteContext);
- //console.log('App 00.6 RemoteContext.Provider:',RemoteContext.Provider);
+ console.log('App 0.1 ModalContext:',ModalContext);
+ console.log('App 0.6 ModalContext.Provider:',ModalContext.Provider);
+ console.log('App 1 ModalProvider:',ModalProvider);
+ console.log('App 00.1 RemoteContext:',RemoteContext);
+ console.log('App 00.6 RemoteContext.Provider:',RemoteContext.Provider);
  console.log('App 01 RemoteProvider:',RemoteProvider);
   const checkAuthenticated = async () => {
     try {

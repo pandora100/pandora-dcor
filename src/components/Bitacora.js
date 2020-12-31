@@ -299,15 +299,13 @@ console.log('Bitacora 21' );
                             <div className="count11container" >Total de registros encontrados: 
                             </div > 
                             <div className="miTabla11container" >
-                            {gifs.map((fila,index)=>{
-                            	 <div >
-                            	<h1 key={index}>{fila}</h1>
-                            	 </div >
-                            })}
                             
                            
                             />
-                            
+                            {gifs.map((fila,index)=>{
+                            	 <div >
+                            	<h1 key={index}>{fila}</h1>})}
+                            	 </div >
 		                        </div > 
      
     </React.Fragment>

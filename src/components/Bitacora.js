@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect, } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import "./Bitacora.css";
 import BannersDCOR3 from '../assets/BannersDCOR3.GIF';
 import DatePicker from "react-datepicker";
@@ -13,7 +13,7 @@ import moment from "moment";
 
 
 function Bitacora({setAuth}) {
- const referencia = useRef(); 	
+  	
  const [name, setName] = useState("");
  const [dateTime, setDateTime] = useState(new Date());
  const [data, setData] = useState([]);

@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect,useRef } from "react";
+import React, { Fragment, useState, useEffect, } from "react";
 import "./Bitacora.css";
 import BannersDCOR3 from '../assets/BannersDCOR3.GIF';
 import DatePicker from "react-datepicker";
@@ -16,7 +16,7 @@ function Bitacora({setAuth}) {
  const referencia = useRef(); 	
  const [name, setName] = useState("");
  const [dateTime, setDateTime] = useState(new Date());
-
+ const [data, setData] = useState([]);
  ////////77
  const [gifs, setGifs] = useState([]);
  const [startDate, setStartDate] = useState(new Date());
@@ -28,7 +28,7 @@ function Bitacora({setAuth}) {
  const [valorfiltro2, setValorFiltro2] = useState('');
  const [valorfiltro3, setValorFiltro3] = useState('');
  ////////77
-let data = [0];
+
  ////////77
 
  console.log('Bitacora 16' );
@@ -314,7 +314,7 @@ const columns = [
                             tooltips={true}
                             layout={"fitData"}
                             options={options}
-                            ref={referencia}
+                           
                             />
                            
                             />

@@ -130,7 +130,10 @@ valorfiltro3[e.target.value];
 setValorFiltro3(e.target.value);
 }
  //////////
-
+           const fcd = [
+                           {id_evento:1, nombregr:"Oli Bob"},
+                           {id_evento:2, nombregr:"Mary May"}                                    
+                                  ];
            const columns = [
           { title: "id", field: "id_evento", width: 60 },
           { title: "grupo", field: "nombregr", width: 100}
@@ -283,10 +286,7 @@ console.log('Bitacora 207 gifs:',gifs.length);
                          
                             {gifs.length > 0 ?
                             <ReactTabulator
-                             data={[
-                                    {id_evento:1, nombregr:"Oli Bob"},
-                                    {id_evento:2, nombregr:"Mary May"}                                    
-                                  ]}
+                            data={fcd}
                             columns={columns}
                             tooltips={true}
                             layout={"fitData"}

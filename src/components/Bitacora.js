@@ -300,7 +300,8 @@ console.log('Bitacora 21' );
                             <div className="count11container" > Total de registros encontrados: 
                             </div > 
                            <div>
-                {gifs.length > 0 ?
+                 GIFS: {gifs}         
+                {gifs.length >= 0 ?
                  <ReactTabulator
                             data={gifs}
                             columns={columns}

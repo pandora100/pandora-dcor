@@ -305,7 +305,7 @@ console.log('Bitacora 207 gifs:',gifs.length);
                          
                 {gifs.length > 0 ?
                  <ReactTabulator
-                            
+                            data={{}}
                             columns={columns}
                             tooltips={true}
                             layout={"fitData"}

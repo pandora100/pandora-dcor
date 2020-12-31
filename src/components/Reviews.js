@@ -1,8 +1,8 @@
 import React, { Fragment,useState,useEffect,useContext } from "react";
 import Marquee from "react-smooth-marquee"
-import pullup from '../assets/windowsIcons/pullup.PNG';
-import viewInfo from '../assets/windowsIcons/view-info.PNG';
-import folderSmall from '../assets/windowsIcons/folderSmall.PNG';
+import pullup from '../assets/pullup.GIF';
+import viewInfo from '../assets/view-info.GIF';
+import folderSmall from '../assets/folderSmall.GIF';
 import logogit from '../assets/logogit.PNG';
 import './Reviews.css';
 import {RemoteContext} from "../context/RemotosContext.js"; 
@@ -32,7 +32,7 @@ return (
                   src={logogit}
                   alt=""
                  
-                />Total HUAWEI_GSM: {estagifs[0]}
+                />Total HUA_GSM: {estagifs[0]}
 </div>
 </div>
 <div className="reviews__content__left_huaumts">
@@ -41,7 +41,7 @@ return (
                   src={logogit}
                   alt=""
                  
-                />Total HUAWEI_UMTS: {estagifs[1]}
+                />Total HUA_UMTS: {estagifs[1]}
 </div> 
 </div>
 <div className="reviews__content__left_flexent">

@@ -1,4 +1,4 @@
-//PandoraHeader1.js
+//pandoraHeader1.js
 import React, { Fragment, useState } from "react";
 import logo1 from '../assets/custom_logo/logo1.PNG' ;
 import logo2 from '../assets/custom_logo/logo2.PNG' ;

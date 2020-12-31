@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import Marquee from "react-smooth-marquee"
-import pullup from '../assets/windowsIcons/pullup.PNG';
-import viewInfo from '../assets/windowsIcons/view-info.PNG';
-import folderSmall from '../assets/windowsIcons/folderSmall.PNG';
+import pullup from '../assets/pullup.GIF';
+import viewInfo from '../assets/view-info.GIF';
+import folderSmall from '../assets/folderSmall.GIF';
 import logogit from '../assets/logogit.PNG';
 import './Reviews2.css'; 
  const Reviews2=()=>(
@@ -17,26 +17,26 @@ import './Reviews2.css';
                   src={logogit}
                   alt=""
                  
-                />Orq HUAWEI_GSM: 256
+                />Orq HUA_GSM: 256
  <br/> 
   <img
                   src={logogit}
                   alt=""
                  
-                />Pand HUAWEI_GSM: 256 
+                />Pand HUA_GSM: 256 
 <br/> 
 <img
                   src={logogit}
                   alt=""
                  
-                />Dry HUAWEI_GSM: 256
+                />Dry HUA_GSM: 256
 <br/> 
                  
 <img
                   src={logogit}
                   alt=""
                  
-                />Wash HUAWEI_GSM: 256                                             
+                />Wash HUA_GSM: 256                                             
 </div>
 </div>
 <div className="reviews__content__left_huaumts">
@@ -45,27 +45,27 @@ import './Reviews2.css';
                   src={logogit}
                   alt=""
                  
-                />Orq HUAWEI_UMTS: 220
+                />Orq HUA_UMTS: 220
 <br/> 
                  
 <img
                   src={logogit}
                   alt=""
                  
-                />Pand HUAWEI_UMTS: 220  
+                />Pand HUA_UMTS: 220  
 <br/> 
 <img
                   src={logogit}
                   alt=""
                  
-                />Dry HUAWEI_UMTS: 220
+                />Dry HUA_UMTS: 220
 <br/> 
                  
 <img
                   src={logogit}
                   alt=""
                  
-                />Wash HUAWEI_UMTS: 220                  
+                />Wash HUA_UMTS: 220                  
 </div> 
 </div>
 <div className="reviews__content__left_flexent">

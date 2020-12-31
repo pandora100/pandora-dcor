@@ -1,8 +1,8 @@
 //BarraHerramientas3.js
 //<Link to='/ModalModulos'></Link> 
 import React, { Fragment, useState,useContext } from "react";
-//import back from '../assets/windowsIcons/back.PNG';
-import cincocuatroseis from '../assets/windowsIcons/cincocuatroseis.PNG';
+
+import cincocuatroseis from '../assets/cincocuatroseis.GIF';
 import './BarraHerramientas3.css'
 import { Link, Redirect } from "react-router-dom";
 import ModalModulos from "./ModalModulos";
@@ -27,7 +27,7 @@ const BarraHerramientas3 = ({t1}) => {
     {isModalModulosOpen && <ModalModulos onClose={onClose}/>}
         
           <img onClick={onClose} className="com__function_bar__icon" src={cincocuatroseis} alt="xxxxxx" />
-          <span className="com__function_bar__text">{t1}</span>
+          <span className="com__function_bar__text">Add Mod</span>
           
          </div>
         </section>

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./Bitacora.css";
-import BannersDCOR3 from '../assets/BannersDCOR3.GIF';
+import BannersDCOR3 from '../assets/BannersDCOR3.PNG';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '@babel/polyfill';
@@ -18,7 +18,7 @@ function Bitacora({setAuth}) {
  const getProfile = async () => {
     try {
       //const res = await fetch("http://backendpandoragui.herokuapp.com/dashboard/", {
-       const res = await fetch("http://localhost:5000/dashboard/", {
+       const res = await fetch("http://backendpandoragui.herokuapp.com/dashboard/", {
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
@@ -74,7 +74,7 @@ function Bitacora({setAuth}) {
 
      try {
     
-      //////const body = { tecnologiasSeleccionado,agentesSeleccionado,modulosSeleccionado,criticitySeleccionado,estadoSeleccionado,timestamp,utimestamp,usercomment};
+      //////const body = { tecnologiasSelecciolnado,agentesSeleccionado,modulosSeleccionado,criticitySeleccionado,estadoSeleccionado,timestamp,utimestamp,usercomment};
       const body = { startDate,endDate,filtro1,filtro2,filtro3,valorfiltro1,valorfiltro2,valorfiltro3};
       console.log('Bitacora 10 body:',body);
       
@@ -300,9 +300,9 @@ console.log('Bitacora 207 gifs:',gifs.length);
                             tooltips={true}
                             layout={"fitData"}
                             options={options}
-                           
-                            />  
-                            
+                            : 
+                            /> <p >  Cargando  </p> 
+                            }
                             </div > 
      
     </React.Fragment>

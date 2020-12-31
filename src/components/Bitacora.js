@@ -286,7 +286,7 @@ console.log('Bitacora 207 gifs:',gifs.length);
                              data={[
                                     {id_evento:1, nombregr:"Oli Bob"},
                                     {id_evento:2, nombregr:"Mary May"}                                    
-                                  ]
+                                  ]}
                             columns={columns}
                             tooltips={true}
                             layout={"fitData"}

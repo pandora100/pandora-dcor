@@ -15,7 +15,8 @@ import moment from "moment";
 function Bitacora({setAuth}) {
  const [name, setName] = useState("");
  const [dateTime, setDateTime] = useState(new Date());
- console.log('Bitacora 16' ); 
+ console.log('Bitacora 16' );
+ console.log('Bitacora 19.05 name:',name);  
  const getProfile = async () => {
     try {
     console.log('Bitacora 19.1' ); 	
@@ -25,10 +26,14 @@ function Bitacora({setAuth}) {
         headers: { jwt_token: localStorage.token }
       });
  console.log('Bitacora 19.2' ); 	     
- console.log('Bitacora 17' ); 
+ console.log('Bitacora 19.3' ); 
       const parseData = await res.json();
+       console.log('Bitacora 19.4',parseData ); 
+       console.log('Bitacora 19.5',parseData.user_name ); 
       setName(parseData.user_name);
-      console.log('Dashboard 1 parseRes:',parseData); 
+      
+      console.log('Bitacora 19.6 name:',name); 
+      toast.success("Bitacora 19.6 name",name);
       //console.log('Dashboard 2 name:',name); 
       //console.log('Dashboard 3 localStorage.token:',localStorage.token);  
       //console.log('Dashboard 4 setAuth:',setAuth);

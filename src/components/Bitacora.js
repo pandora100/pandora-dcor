@@ -18,11 +18,13 @@ function Bitacora({setAuth}) {
  console.log('Bitacora 16' ); 
  const getProfile = async () => {
     try {
+    console.log('Bitacora 19.1' ); 	
       const res = await fetch("http://backendpandoragui.herokuapp.com/dashboard/", {
       // const res = await fetch("http://localhost:5000/dashboard/", {
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
+ console.log('Bitacora 19.2' ); 	     
  console.log('Bitacora 17' ); 
       const parseData = await res.json();
       setName(parseData.user_name);
@@ -69,7 +71,7 @@ function Bitacora({setAuth}) {
  ////////77
 
   const handleSubmit = async evt => {
-    console.log('Bitacora 20' ); 
+   
     evt.preventDefault();
     // console.log('InputDependencia 08 handleSubmit evt:',evt);
     //////
@@ -96,11 +98,11 @@ function Bitacora({setAuth}) {
      
      toast.success("Peticion realizada Exitosamente");
      ////////////////////////////////////toast.success("Peticion Exitosa:");
-     console.log('Bitacora 11 parseRes:',parseRes );
+    
      //window.location = "/dashboard";
       ////////////////////////////////////onClose();
      setGifs(parseRes);
-     console.log('Bitacora 12 gifs:',gifs );
+     
     } catch (err) {
       console.error(err.message);
      //////////////////////////////////// 

@@ -108,7 +108,7 @@ function Bitacora({setAuth}) {
       ////////////////////////////////////onClose();
      setGifs(parseRes);
      
-     
+      console.log('Bitacora 207 gifs:',gifs); 
     } catch (err) {
       console.error(err.message);
      //////////////////////////////////// 
@@ -175,7 +175,7 @@ const columns = [
      paginationSize:100 // this option can take any positive integer value (default = 10)
 };
 
- console.log('Bitacora 207 gifs:',gifs); 
+console.log('Bitacora 21' ); 
  //////////
   return (
     
@@ -300,14 +300,12 @@ const columns = [
                             <div className="count11container" >Total de registros encontrados: 
                             </div > 
                             <div className="miTabla11container" >
-                             <ReactTabulator
-                            data={gifs}
-                            columns={columns}
-                            tooltips={true}
-                            layout={"fitData"}
-                            options={options}
-                           
-                            />
+                            {gifs.map((fila,index)=>{
+                            	return <div >
+                            	<div key={fila.id_evento}>{fila.nombremo}</div>
+                            	 </div >
+                            })}
+                            
                            
                             />
                            

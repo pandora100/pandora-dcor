@@ -162,7 +162,7 @@ const columns = [
         ];
 
       //var data = gifs;
-      var data = [];
+      var data = gifs;
      const options = {
      
      tooltips:true,

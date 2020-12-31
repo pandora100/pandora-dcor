@@ -10,7 +10,7 @@ module.exports = {
   module: {
     rules: [
        {
-       test: /\.(jpe?g|png|PNG|gif|svg)$/i,
+       test: /\.(jpe?g|png|PNG|gif|GIF|svg)$/i,
         use: {
           loader: "file-loader",
             options: {
@@ -28,24 +28,12 @@ module.exports = {
           loader: "babel-loader"
         }
       },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true,
-              minimize: true
-            }
-          }
+       {
+        use: ['style-loader', 'css-loader'],
+        test: /\.css$/
+      }
         ]
       }
-    ]
-  }
+    
+ 
 };

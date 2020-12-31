@@ -28,7 +28,7 @@ function Bitacora({setAuth}) {
  const [valorfiltro2, setValorFiltro2] = useState('');
  const [valorfiltro3, setValorFiltro3] = useState('');
  ////////77
-let data = {[]};
+let data = {};
  ////////77
  
  console.log('Bitacora 16' );

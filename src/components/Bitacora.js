@@ -297,7 +297,7 @@ console.log('Bitacora 21' );
 
           </div>
                             
-                            <div className="count11container" >valor gifs: {gifs} --- Total de registros encontrados: 
+                            <div className="count11container" >Total de registros encontrados: 
                             </div > 
                            <div>
                          

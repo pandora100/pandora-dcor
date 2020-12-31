@@ -16,6 +16,7 @@ function Bitacora({setAuth}) {
  const referencia = useRef(); 	
  const [name, setName] = useState("");
  const [dateTime, setDateTime] = useState(new Date());
+
  ////////77
  const [gifs, setGifs] = useState([]);
  const [startDate, setStartDate] = useState(new Date());
@@ -27,6 +28,9 @@ function Bitacora({setAuth}) {
  const [valorfiltro2, setValorFiltro2] = useState('');
  const [valorfiltro3, setValorFiltro3] = useState('');
  ////////77
+let data = {[]};
+ ////////77
+ 
  console.log('Bitacora 16' );
  console.log('Bitacora 19.05 name:',name);  
  const getProfile = async () => {
@@ -165,7 +169,7 @@ const columns = [
 
       //var data = gifs;
      //let datax = [...selectAlarm]; 
-     let data = gifs;
+     //let data = {[]};
      //let data = [...gifs];
      const options = {
      

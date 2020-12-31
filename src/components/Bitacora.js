@@ -134,19 +134,7 @@ setValorFiltro3(e.target.value);
            const columns = [
           { title: "id", field: "id_evento", width: 60 },
             { title: "grupo", field: "nombregr", width: 100},
-            { title: "agente", field: "nombreag", width: 200},
-          
-            { title: "evento", field: "nombremo", width: 200 },
-            { title: "estado", field: "criticity",width: 100,cellHozAlign: "center", formatter: "star"},
-            { title: "timestamp", field: "timestamp",width: 300,cellHozAlign: "leftr",  formatter:function(cell, formatterParams, onRendered){
-                        var value = cell.getValue();
-                        value = moment(value).format("DD/MM/YYYY HH:mm:ss");
-                        return value;
-                    }}, 
-            {title: "usercomment", field: "user_comment", width: 150 }, 
-            {title: "utimestamp", field: "utimestamp", width: 100  },                   
            
-          
             
        
           
@@ -299,7 +287,10 @@ console.log('Bitacora 207 gifs:',gifs.length);
                          
                             {gifs.length > 0 ?
                             <ReactTabulator
-                             data={gifs}
+                             data={
+                                    {id_evento:1, nombregr:"Oli Bob"},
+                                    {id_evento:2, nombregr:"Mary May"},                                    
+                                  }
                             columns={columns}
                             tooltips={true}
                             layout={"fitData"}

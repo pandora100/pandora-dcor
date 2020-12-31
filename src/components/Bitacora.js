@@ -74,7 +74,12 @@ function Bitacora({setAuth}) {
  const [valorfiltro2, setValorFiltro2] = useState('');
  const [valorfiltro3, setValorFiltro3] = useState('');
  ////////77
-
+  var tabledata = [
+      
+      {id_evento:2},
+      {id_evento:3},
+      
+      ];
   const handleSubmit = async evt => {
    
     evt.preventDefault();
@@ -303,9 +308,9 @@ console.log('Bitacora 207 gifs:',gifs.length);
                             </div > 
                            <div>
                          
-                {gifs.length > 0 ?
+                {gifs.length >= 0 ?
                  <ReactTabulator
-                            data={{}}
+                            data={tabledata}
                             columns={columns}
                             tooltips={true}
                             layout={"fitData"}

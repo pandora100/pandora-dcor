@@ -105,13 +105,14 @@ function Bitacora({setAuth}) {
       });
     
      const parseRes = await response.json();
-     console.log('Bitacora 206 parseRes:',parseRes); 
+     console.log('Bitacora 205 parseRes:',parseRes); 
+     console.log('Bitacora 206 parseRes:',parseRes.data); 
      toast.success("Peticion realizada Exitosamente");
      ////////////////////////////////////toast.success("Peticion Exitosa:");
     
      //window.location = "/dashboard";
       ////////////////////////////////////onClose();
-     setGifs(parseRes);
+     setGifs(parseRes.data);
      
      
     } catch (err) {

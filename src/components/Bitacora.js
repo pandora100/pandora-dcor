@@ -54,6 +54,8 @@ function Bitacora({setAuth}) {
 //  
  
 ////////77
+  const [fcd, setFcd] = useState([{id_evento:1, nombregr:"Oli Bob"},
+                           {id_evento:2, nombregr:"Mary May"}  ]);
  const [gifs, setGifs] = useState([]);
  const [startDate, setStartDate] = useState(new Date());
  const [endDate, setEndDate] = useState(new Date());
@@ -130,7 +132,7 @@ valorfiltro3[e.target.value];
 setValorFiltro3(e.target.value);
 }
  //////////
-           const fcd = [
+           const fxd = [
                            {id_evento:1, nombregr:"Oli Bob"},
                            {id_evento:2, nombregr:"Mary May"}                                    
                                   ];
@@ -282,17 +284,14 @@ console.log('Bitacora 207 gifs:',gifs.length);
                             </div > 
                             <div className="miTabla11container" >
                             
-                           
-                         
-                            {gifs.length > 0 ?
+                            
                             <ReactTabulator
                             data={fcd}
                             columns={columns}
                             options={options}
-                            
+                            layout={"fitData"}
                             /> 
-                            : <p>Cargando</p> 
-                            }
+                           
                             </div > 
      
     </React.Fragment>

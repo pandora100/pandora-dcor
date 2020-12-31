@@ -15,25 +15,17 @@ import moment from "moment";
 function Bitacora({setAuth}) {
  const [name, setName] = useState("");
  const [dateTime, setDateTime] = useState(new Date());
- console.log('Bitacora 16' );
- console.log('Bitacora 19.05 name:',name);  
  const getProfile = async () => {
     try {
-    console.log('Bitacora 19.1' ); 	
-      const res = await fetch("http://backendpandoragui.herokuapp.com/dashboard/", {
-      // const res = await fetch("http://localhost:5000/dashboard/", {
+      //const res = await fetch("http://backendpandoragui.herokuapp.com/dashboard/", {
+       const res = await fetch("http://localhost:5000/dashboard/", {
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
- console.log('Bitacora 19.2' ); 	     
- console.log('Bitacora 19.3' ); 
+
       const parseData = await res.json();
-       console.log('Bitacora 19.4',parseData ); 
-       console.log('Bitacora 19.5',parseData.user_name ); 
       setName(parseData.user_name);
-      
-      console.log('Bitacora 19.6 name:',name); 
-      toast.success("Bitacora 19.6 name",name);
+      console.log('Dashboard 1 parseRes:',parseData); 
       //console.log('Dashboard 2 name:',name); 
       //console.log('Dashboard 3 localStorage.token:',localStorage.token);  
       //console.log('Dashboard 4 setAuth:',setAuth);
@@ -41,7 +33,6 @@ function Bitacora({setAuth}) {
        // console.log('Dashboard 6 isModalOpen:',isModalOpen);       
     } catch (err) {
       console.error(err.message);
-      console.log('Bitacora 18' ); 
        toast.error(err.message);
     }
   };
@@ -59,7 +50,6 @@ function Bitacora({setAuth}) {
 
   useEffect(() => {
     getProfile();
-    console.log('Bitacora 19' ); 
   }, []);
 //  
  
@@ -74,14 +64,9 @@ function Bitacora({setAuth}) {
  const [valorfiltro2, setValorFiltro2] = useState('');
  const [valorfiltro3, setValorFiltro3] = useState('');
  ////////77
-  var tabledata = [
-      
-      {id_evento:2},
-      {id_evento:3},
-      
-      ];
+
   const handleSubmit = async evt => {
-   
+  
     evt.preventDefault();
     // console.log('InputDependencia 08 handleSubmit evt:',evt);
     //////
@@ -92,9 +77,8 @@ function Bitacora({setAuth}) {
       //////const body = { tecnologiasSeleccionado,agentesSeleccionado,modulosSeleccionado,criticitySeleccionado,estadoSeleccionado,timestamp,utimestamp,usercomment};
       const body = { startDate,endDate,filtro1,filtro2,filtro3,valorfiltro1,valorfiltro2,valorfiltro3};
       console.log('Bitacora 10 body:',body);
-       const response = await fetch("http://backendpandoragui.herokuapp.com/dashboard/bitacoras", {
-
-     // const response = await fetch("http://localhost:5000/dashboard/bitacoras", {
+      
+      const response = await fetch("http://localhost:5000/dashboard/bitacoras", {
         method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -105,16 +89,14 @@ function Bitacora({setAuth}) {
       });
     
      const parseRes = await response.json();
-     console.log('Bitacora 205 parseRes:',parseRes); 
-     console.log('Bitacora 206 parseRes:',parseRes.data); 
+     
      toast.success("Peticion realizada Exitosamente");
      ////////////////////////////////////toast.success("Peticion Exitosa:");
-    
+     console.log('Bitacora 11 parseRes:',parseRes );
      //window.location = "/dashboard";
       ////////////////////////////////////onClose();
-     setGifs(parseRes.data);
-     
-     
+     setGifs(parseRes);
+     console.log('Bitacora 12 gifs:',gifs );
     } catch (err) {
       console.error(err.message);
      //////////////////////////////////// 
@@ -166,10 +148,9 @@ const columns = [
           
             
         ];
-       //data={gifs}
+
       //var data = gifs;
-     //var data = [];
-     let datax = [...gifs];
+     // var data = [];
      const options = {
      
      tooltips:true,
@@ -191,140 +172,135 @@ console.log('Bitacora 207 gifs:',gifs.length);
 
     <React.Fragment>
      <div className="contenedor">
-	      <div className='BannersDCOR3'>
-	      <img src={BannersDCOR3} alt="BannersDCOR3" />
-	       </div>
-			    <div className="contenedortablas">   
-			    <div className="tmasafuera">
+        <div className='BannersDCOR3'>
+        <img src={BannersDCOR3} alt="BannersDCOR3" />
+         </div>
+          <div className="contenedortablas">   
+          <div className="tmasafuera">
                        <form name="frmTemip" method="post" onSubmit={handleSubmit}>
 
                        
                       
-			            <div className="titulocajitas" >Criterio de busqueda de alarmas
-			            
+                  <div className="titulocajitas" >Criterio de busqueda de alarmas
+                  
                         </div>
                         <div className="SGITexto" >
                           <div className="barra1" >
-			            
+                  
                         
                         <div className="datepick1" >{" "}Desde:
                           <DatePicker
-					       selected={startDate}
-					       selectsStart
-					       startDate={startDate}
-					       endDate={endDate}
-					       onChange={date => setStartDate(date)}
-					     />
-					      
-					     </div>
-					     <div className="datepick2" >{" "}Hasta:
-					     <DatePicker
-					       selected={endDate}
-					       selectsEnd
-					       startDate={startDate}
-					       endDate={endDate}
-					     
-					       minDate={startDate}
-					       onChange={date => setEndDate(date)}
-					     />
-					      
+                 selected={startDate}
+                 selectsStart
+                 startDate={startDate}
+                 endDate={endDate}
+                 onChange={date => setStartDate(date)}
+               />
+                
+               </div>
+               <div className="datepick2" >{" "}Hasta:
+               <DatePicker
+                 selected={endDate}
+                 selectsEnd
+                 startDate={startDate}
+                 endDate={endDate}
+               
+                 minDate={startDate}
+                 onChange={date => setEndDate(date)}
+               />
+                
                         </div>
                         </div>
                         
                                         
                                         <div className="barra3" >
                                           <select name="filtro1" style={{"width" : "110px"}} size="1" className="MOVILNETListBox" onChange={handleTypeChangeFiltro1}>
-				                           
-				                             <option value="grupo">Grupo</option>
-				                           
-				                            
-				                        </select>
-				                        <input type="text"  className="MOVILNETinputBox"
+                                   
+                                     <option value="grupo">Grupo</option>
+                                   
+                                    
+                                </select>
+                                <input type="text"  className="MOVILNETinputBox"
                                          name="valorfiltro1"
-								         value={valorfiltro1}
-								         onChange={handleTypeChangeValorFiltro1}
+                         value={valorfiltro1}
+                         onChange={handleTypeChangeValorFiltro1}
                                          >
-				                           
-				                        </input>
+                                   
+                                </input>
                                         </div>
                                         <div className="barra4" >
                                         <select name="filtro2" size="1" style={{"width" : "110px"}} className="MOVILNETListBox" onChange={handleTypeChangeFiltro2}>
-				                             <option value="agente">Agente</option> 
+                                     <option value="agente">Agente</option> 
 
-				                            
-				                           
-				                        </select>
-				                        <input type="text"  className="MOVILNETinputBox"
+                                    
+                                   
+                                </select>
+                                <input type="text"  className="MOVILNETinputBox"
                                           name="valorfiltro2"
-								          value={valorfiltro2}
-								          onChange={handleTypeChangeValorFiltro2}
+                          value={valorfiltro2}
+                          onChange={handleTypeChangeValorFiltro2}
 
-				                        >
-				                           
-				                        </input>
+                                >
+                                   
+                                </input>
                                         </div>
                                           <div className="barra5" >
                                     <select name="filtro3" size="1" style={{"width" : "110px"}} className="MOVILNETListBox" onChange={handleTypeChangeFiltro3}>
-				                          
-				                            <option value="modulo">Modulo</option>
+                                  
+                                    <option value="modulo">Modulo</option>
                                     
-				                           
-				                        </select>
-				                        <input type="text"
-				                         className="MOVILNETinputBox"
+                                   
+                                </select>
+                                <input type="text"
+                                 className="MOVILNETinputBox"
                                          name="valorfiltro3"
-								         value={valorfiltro3}
-								         onChange={handleTypeChangeValorFiltro3}
-				                         >
-				                           
-				                        </input>
+                         value={valorfiltro3}
+                         onChange={handleTypeChangeValorFiltro3}
+                                 >
+                                   
+                                </input>
                                         </div>
                                          <div className="MOVILNETButton" >.El usuario debe seleccioner al menos un criterio de búsqueda                          .
                                        
-				                        <button type="submit" className="MOVILNETinputButton">Aceptar
-				                           
-				                        </button>
-				                        
+                                <button type="submit" className="MOVILNETinputButton">Aceptar
+                                   
+                                </button>
+                                
                                 <button className="MOVILNETinputButton" onClick={logout}>Logout
                                    
                                 </button>
-				                        .Pulse en Aceptar para buscar histórico y Logout para deslogear.
+                                .Pulse en Aceptar para buscar histórico y Logout para deslogear.
                                         </div>
                                         
 
-			            
+                  
                         
                         
                         </div>
 
                         </form>
                         
-		      </div>
+          </div>
 
 
           </div>
 
           </div>
                             
-                            <div className="count11container" >Total de registros encontrados: 
+                            <div className="count11container" >Total de registros encontrados:{gifs.length} 
                             </div > 
-                           <div>
-                         
-                {gifs.length > 0 ?
-                 <ReactTabulator
-                            data={datax}
+                            <div className="miTabla11container" >
+                            
+                            <ReactTabulator
+                            data={gifs}
                             columns={columns}
                             tooltips={true}
                             layout={"fitData"}
                             options={options}
                            
-                            />  
-                : <p className="count11container" >valor gifs: {gifs} --- Cargando</p>
-                }
-               
-                          
-                           
-		                    </div > 
+                            />
+                            
+                            </div > 
      
     </React.Fragment>
     

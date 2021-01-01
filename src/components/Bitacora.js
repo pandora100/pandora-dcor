@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect,useRef } from "react";
+imimport React, { Fragment, useState, useEffect } from "react";
 import "./Bitacora.css";
 import BannersDCOR3 from '../assets/BannersDCOR3.GIF';
 import DatePicker from "react-datepicker";
@@ -14,19 +15,26 @@ import moment from "moment";
 
 function Bitacora({setAuth}) {
  const [name, setName] = useState("");
- const referencia = useRef(); 
  const [dateTime, setDateTime] = useState(new Date());
+ console.log('Bitacora 16' );
+ console.log('Bitacora 19.05 name:',name);  
  const getProfile = async () => {
     try {
-      //const res = await fetch("http://backendpandoragui.herokuapp.com/dashboard/", {
-       const res = await fetch("http://backendpandoragui.herokuapp.com/dashboard/", {
+    console.log('Bitacora 19.1' );  
+      const res = await fetch("http://backendpandoragui.herokuapp.com/dashboard/", {
+      // const res = await fetch("http://localhost:5000/dashboard/", {
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
-
+ console.log('Bitacora 19.2' );        
+ console.log('Bitacora 19.3' ); 
       const parseData = await res.json();
+       console.log('Bitacora 19.4',parseData ); 
+       console.log('Bitacora 19.5',parseData.user_name ); 
       setName(parseData.user_name);
-      console.log('Dashboard 1 parseRes:',parseData); 
+      
+      console.log('Bitacora 19.6 name:',name); 
+      toast.success("Bitacora 19.6 name",name);
       //console.log('Dashboard 2 name:',name); 
       //console.log('Dashboard 3 localStorage.token:',localStorage.token);  
       //console.log('Dashboard 4 setAuth:',setAuth);
@@ -34,6 +42,7 @@ function Bitacora({setAuth}) {
        // console.log('Dashboard 6 isModalOpen:',isModalOpen);       
     } catch (err) {
       console.error(err.message);
+      console.log('Bitacora 18' ); 
        toast.error(err.message);
     }
   };
@@ -51,12 +60,11 @@ function Bitacora({setAuth}) {
 
   useEffect(() => {
     getProfile();
+    console.log('Bitacora 19' ); 
   }, []);
 //  
  
 ////////77
-  const [fcd, setFcd] = useState([{id_evento:1, nombregr:"Oli Bob"},
-                           {id_evento:2, nombregr:"Mary May"}  ]);
  const [gifs, setGifs] = useState([]);
  const [startDate, setStartDate] = useState(new Date());
  const [endDate, setEndDate] = useState(new Date());
@@ -66,11 +74,10 @@ function Bitacora({setAuth}) {
  const [valorfiltro1, setValorFiltro1] = useState('');
  const [valorfiltro2, setValorFiltro2] = useState('');
  const [valorfiltro3, setValorFiltro3] = useState('');
-
  ////////77
 
   const handleSubmit = async evt => {
-  
+   
     evt.preventDefault();
     // console.log('InputDependencia 08 handleSubmit evt:',evt);
     //////
@@ -78,11 +85,12 @@ function Bitacora({setAuth}) {
 
      try {
     
-      //////const body = { tecnologiasSelecciolnado,agentesSeleccionado,modulosSeleccionado,criticitySeleccionado,estadoSeleccionado,timestamp,utimestamp,usercomment};
+      //////const body = { tecnologiasSeleccionado,agentesSeleccionado,modulosSeleccionado,criticitySeleccionado,estadoSeleccionado,timestamp,utimestamp,usercomment};
       const body = { startDate,endDate,filtro1,filtro2,filtro3,valorfiltro1,valorfiltro2,valorfiltro3};
       console.log('Bitacora 10 body:',body);
-      
-      const response = await fetch("http://backendpandoragui.herokuapp.com/dashboard/bitacoras", {
+       const response = await fetch("http://backendpandoragui.herokuapp.com/dashboard/bitacoras", {
+
+     // const response = await fetch("http://localhost:5000/dashboard/bitacoras", {
         method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -93,14 +101,15 @@ function Bitacora({setAuth}) {
       });
     
      const parseRes = await response.json();
-     
+     console.log('Bitacora 206 parseRes:',parseRes); 
      toast.success("Peticion realizada Exitosamente");
      ////////////////////////////////////toast.success("Peticion Exitosa:");
-     console.log('Bitacora 11 parseRes:',parseRes );
+    
      //window.location = "/dashboard";
       ////////////////////////////////////onClose();
      setGifs(parseRes);
-     console.log('Bitacora 12 gifs:',gifs );
+     
+      console.log('Bitacora 207 gifs:',gifs); 
     } catch (err) {
       console.error(err.message);
      //////////////////////////////////// 
@@ -134,18 +143,27 @@ valorfiltro3[e.target.value];
 setValorFiltro3(e.target.value);
 }
  //////////
-           const fxd = [
-                           {id_evento:1, nombregr:"Oli Bob"},
-                           {id_evento:2, nombregr:"Mary May"}                                    
-                                  ];
-           const columns = [
-          { title: "id", field: "id_evento", width: 60 },
-          { title: "grupo", field: "nombregr", width: 100}
+const columns = [
+            { title: "id", field: "id_evento", width: 60 , cssClass:"miTabla11"},
+            { title: "grupo", field: "nombregr", width: 100, cssClass:"miTabla11"},
+            { title: "agente", field: "nombreag", width: 200 , cssClass:"miTabla11"},
+          
+            { title: "evento", field: "nombremo", width: 200, cssClass:"miTabla11" },
+            { title: "estado", field: "criticity",width: 100,cellHozAlign: "center", formatter: "star" , cssClass:"miTabla11"},
+            { title: "timestamp", field: "timestamp",width: 300,cellHozAlign: "leftr",  formatter:function(cell, formatterParams, onRendered){
+                        var value = cell.getValue();
+                        value = moment(value).format("DD/MM/YYYY HH:mm:ss");
+                        return value;
+                    }, cssClass:"miTabla11"}, 
+            {title: "usercomment", field: "user_comment", width: 150 , cssClass:"miTabla11" }, 
+            {title: "utimestamp", field: "utimestamp", width: 100, cssClass:"miTabla11"  },               
+           
+          
             
         ];
 
       //var data = gifs;
-     // var data = [];
+      var data = [];
      const options = {
      
      tooltips:true,
@@ -159,12 +177,6 @@ setValorFiltro3(e.target.value);
 };
 
 console.log('Bitacora 21' ); 
-console.log('Bitacora 207 gifs:',gifs);
-console.log('Bitacora 208 gifs:',gifs.length); 
-console.log('Bitacora 209 fcd:',fcd);
-console.log('Bitacora 210 fcd.length:',fcd.length);
-console.log('Bitacora 211 referencia:',referencia); 
-console.log('Bitacora 212 referencia !==null:',referencia !==null);  
  //////////
   return (
     
@@ -259,7 +271,7 @@ console.log('Bitacora 212 referencia !==null:',referencia !==null);
                                    
                                 </input>
                                         </div>
-                                         <div className="MOVILNETButton" >.El usuario debe seleccioner al menos un criterio de búsqueda                          .
+                                         <div className="MOVILNETButton" >.El usuario debe seleccioner al menos un criterio de bÃºsqueda                          .
                                        
                                 <button type="submit" className="MOVILNETinputButton">Aceptar
                                    
@@ -268,7 +280,7 @@ console.log('Bitacora 212 referencia !==null:',referencia !==null);
                                 <button className="MOVILNETinputButton" onClick={logout}>Logout
                                    
                                 </button>
-                                .Pulse en Aceptar para buscar histórico y Logout para deslogear.
+                                Pulse en Aceptar para buscar histÃ³rico y Logout para deslogear
                                         </div>
                                         
 
@@ -286,21 +298,75 @@ console.log('Bitacora 212 referencia !==null:',referencia !==null);
 
           </div>
                             
-                            <div className="count11container" >Total de registros encontrados:
+                            <div className="count11container" >Total de registros encontrados: 
                             </div > 
                             <div className="miTabla11container" >
-                            { fcd.length  > 0 && referencia !==null &&
-                            <ReactTabulator
-                            data={fcd}
-                            columns={columns}
-                            tooltips={true}
-                            layout={"fitData"}
-                            options={options}
-                            ref={referencia}
-                            /> 
+                             <table className="table-box">
+                                    <thead>
+                                      <tr>
+                                        <th>id</th>
+                                        <th>grupo</th>
+                                        <th>agente</th>
+                                        <th>evento</th>
+                                        <th>estado</th>
+                                        <th>timestamp</th>
+                                        <th>usercomment</th>
+                                        <th>utimestamp</th>
+                                      </tr>
+                                    </thead>
+                                   
+                                    <tbody>
+                                    {gifs.map((kit, i) => (
+                                    <tr key={i}>
+                                   <td>
+                                   <div className="id_evento">
+                                   {kit.id_evento}
+                                   </div>
+                                   </td>
+                                   <td>
+                                   <div>
+                                   {kit.nombregr}
+                                   </div>
+                                   </td>
+                                   <td>
+                                   <div>
+                                   {kit.nombreag}
+                                   </div>
+                                   </td>
+                                   <td>
+                                   <div>
+                                   {kit.nombremo}
+                                   </div>
+                                   </td>
+                                   <td>
+                                   <div>
+                                   {kit.criticity}
+                                   </div>
+                                   </td>
+                                   <td>
+                                   <div>
+                                   {kit.timestamp}
+                                   </div>
+                                   </td>
+                                   <td>
+                                   <div>
+                                   {kit.user_comment}
+                                   </div>
+                                   </td>
+                                   <td>
+                                   <div>
+                                   {kit.utimestamp}
+                                   </div>
+                                   </td>
+                                   </tr>
+                                   ))}
+                                  </tbody>
+                                  
+                                  </table>
+  
                            
-                            }
-                            </div > 
+                           
+                        </div > 
      
     </React.Fragment>
     

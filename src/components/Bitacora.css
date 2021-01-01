@@ -157,3 +157,29 @@ font-weight: bold;
 	font-family: Verdana, Arial, Helvetica, sans-serif; 
 	background-color:  white;
 }
+
+.table-box {
+    overflow: scroll;
+    height: 30px;
+    width: 40px;
+}
+table {width: 67.8%;}
+ 
+table th {min-width: 62px; padding: 7px;background-color: #ddd;}
+table td {min-width: 62px;}
+ 
+table tr th{position: sticky;left: 0;}
+table tr:nth-child(1) th,table tr:nth-child(2) th{z-index: 1;}
+table tr:nth-child(1) th,table tr:nth-child(1) td  {top:0px;position: sticky;}
+table tr:nth-child(1) td {background-color: #eee;}
+ 
+table tr:nth-child(2) th,table tr:nth-child(2) td{top:34px;position: sticky;}
+table tr:nth-child(2) td {background-color: #eee;}
+
+
+	
+
+table tr:nth-child(1) th {top:0px;position: sticky;}
+ 
+
+th,table tr:nth-child(1) td {top: 0px;position: sticky;}

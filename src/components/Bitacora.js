@@ -279,7 +279,7 @@ console.log('Bitacora 21' );
                                 <button className="MOVILNETinputButton" onClick={logout}>Logout
                                    
                                 </button>
-                                Pulse en Aceptar para buscar histÃ³rico y Logout para deslogear
+                                Pulse en Aceptar para buscar historico y Logout para deslogear
                                         </div>
                                         
 

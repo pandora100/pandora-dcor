@@ -56,7 +56,7 @@ function Bitacora({setAuth}) {
 ////////77
   const [fcd, setFcd] = useState([{id_evento:1, nombregr:"Oli Bob"},
                            {id_evento:2, nombregr:"Mary May"}  ]);
- const [gifs, setGifs] = useState([]);
+ const [gifs, setGifs] = useState(undefined);
  const [startDate, setStartDate] = useState(new Date());
  const [endDate, setEndDate] = useState(new Date());
  const [filtro1, setFiltro1] = useState("grupo");
@@ -284,7 +284,7 @@ console.log('Bitacora 207 gifs:',gifs.length);
                             </div > 
                             <div className="miTabla11container" >
                             
-                            {gifs.length > 0 ?
+                            {gifs!== undefined ?
                             <ReactTabulator
                             data={fcd}
                             columns={columns}

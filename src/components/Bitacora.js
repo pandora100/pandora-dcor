@@ -284,14 +284,15 @@ console.log('Bitacora 207 gifs:',gifs.length);
                             </div > 
                             <div className="miTabla11container" >
                             
-                            
+                            {gifs.length > 0 ?
                             <ReactTabulator
                             data={fcd}
                             columns={columns}
                             options={options}
                             layout={"fitData"}
                             /> 
-                           
+                            : <p>Cargando</p> 
+                            }
                             </div > 
      
     </React.Fragment>

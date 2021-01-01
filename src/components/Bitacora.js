@@ -158,7 +158,9 @@ setValorFiltro3(e.target.value);
 
 console.log('Bitacora 21' ); 
 console.log('Bitacora 207 gifs:',gifs);
-console.log('Bitacora 207 gifs:',gifs.length);  
+console.log('Bitacora 208 gifs:',gifs.length); 
+console.log('Bitacora 209 fcd:',fcd);
+console.log('Bitacora 210 fcd:',fcd.length);  
  //////////
   return (
     
@@ -284,7 +286,7 @@ console.log('Bitacora 207 gifs:',gifs.length);
                             </div > 
                             <div className="miTabla11container" >
                             
-                            {if fcd > 0  ?
+                            {if fcd.length  > 0  ?
                             <ReactTabulator
                             data={fcd}
                             columns={columns}

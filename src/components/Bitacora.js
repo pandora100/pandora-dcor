@@ -33,7 +33,7 @@ function Bitacora({setAuth}) {
       setName(parseData.user_name);
       
       console.log('Bitacora 19.6 name:',name); 
-      toast.success("Bitacora 19.6 name",name);
+     
       //console.log('Dashboard 2 name:',name); 
       //console.log('Dashboard 3 localStorage.token:',localStorage.token);  
       //console.log('Dashboard 4 setAuth:',setAuth);

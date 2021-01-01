@@ -270,7 +270,7 @@ console.log('Bitacora 21' );
                                    
                                 </input>
                                         </div>
-                                         <div className="MOVILNETButton" >.El usuario debe seleccioner al menos un criterio de bÃºsqueda                          .
+                                         <div className="MOVILNETButton" >El usuario debe seleccioner al menos un criterio de busqueda.
                                        
                                 <button type="submit" className="MOVILNETinputButton">Aceptar
                                    
@@ -297,7 +297,7 @@ console.log('Bitacora 21' );
 
           </div>
                             
-                            <div className="count11container" >Total de registros encontrados: 
+                            <div className="count11container" >Total de registros encontrados:{gifs.length} 
                             </div > 
                             <div className="miTabla11container" >
                              <table className="table-box">
@@ -318,7 +318,7 @@ console.log('Bitacora 21' );
                                     {gifs.map((kit, i) => (
                                     <tr key={i}>
                                    <td>
-                                   <div className="id_evento">
+                                   <div>
                                    {kit.id_evento}
                                    </div>
                                    </td>

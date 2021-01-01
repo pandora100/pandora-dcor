@@ -286,7 +286,7 @@ console.log('Bitacora 210 fcd:',fcd.length);
                             </div > 
                             <div className="miTabla11container" >
                             
-                            {if fcd.length  > 0  ?
+                            {fcd.length  > 0  ?
                             <ReactTabulator
                             data={fcd}
                             columns={columns}

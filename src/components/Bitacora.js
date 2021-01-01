@@ -282,18 +282,17 @@ console.log('Bitacora 210 fcd:',fcd.length);
 
           </div>
                             
-                            <div className="count11container" >Total de registros encontrados:{gifs.length} 
+                            <div className="count11container" >Total de registros encontrados:
                             </div > 
                             <div className="miTabla11container" >
-                            
-                            {fcd.length  > 0  ?
+                            { fcd.length  > 0 && 
                             <ReactTabulator
                             data={fcd}
                             columns={columns}
                             options={options}
                             layout={"fitData"}
                             /> 
-                            : <p>Cargando</p> 
+                           
                             }
                             </div > 
      

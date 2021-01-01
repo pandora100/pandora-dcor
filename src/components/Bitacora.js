@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect,useRef } from "react";
 import "./Bitacora.css";
 import BannersDCOR3 from '../assets/BannersDCOR3.GIF';
 import DatePicker from "react-datepicker";
@@ -14,6 +14,7 @@ import moment from "moment";
 
 function Bitacora({setAuth}) {
  const [name, setName] = useState("");
+ const referencia = useRef(); 
  const [dateTime, setDateTime] = useState(new Date());
  const getProfile = async () => {
     try {
@@ -65,6 +66,7 @@ function Bitacora({setAuth}) {
  const [valorfiltro1, setValorFiltro1] = useState('');
  const [valorfiltro2, setValorFiltro2] = useState('');
  const [valorfiltro3, setValorFiltro3] = useState('');
+
  ////////77
 
   const handleSubmit = async evt => {
@@ -160,7 +162,9 @@ console.log('Bitacora 21' );
 console.log('Bitacora 207 gifs:',gifs);
 console.log('Bitacora 208 gifs:',gifs.length); 
 console.log('Bitacora 209 fcd:',fcd);
-console.log('Bitacora 210 fcd:',fcd.length);  
+console.log('Bitacora 210 fcd.length:',fcd.length);
+console.log('Bitacora 211 referencia:',referencia); 
+console.log('Bitacora 212 referencia !==null:',referencia !==null);  
  //////////
   return (
     
@@ -285,12 +289,14 @@ console.log('Bitacora 210 fcd:',fcd.length);
                             <div className="count11container" >Total de registros encontrados:
                             </div > 
                             <div className="miTabla11container" >
-                            { fcd.length  > 0 && 
+                            { fcd.length  > 0 && referencia !==null &&
                             <ReactTabulator
                             data={fcd}
                             columns={columns}
-                            options={}
-                            layout={}
+                            tooltips={true}
+                            layout={"fitData"}
+                            options={options}
+                            ref={referencia}
                             /> 
                            
                             }

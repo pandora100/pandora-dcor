@@ -288,9 +288,9 @@ console.log('Bitacora 210 fcd:',fcd.length);
                             { fcd.length  > 0 && 
                             <ReactTabulator
                             data={fcd}
-                            columns={columns}
-                            options={options}
-                            layout={"fitData"}
+                            columns={}
+                            options={}
+                            layout={}
                             /> 
                            
                             }
